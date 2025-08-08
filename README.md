@@ -32,4 +32,5 @@ from the paper. The model architecture and hyperparameter configurations are dif
 Only "product" aggregation is tested here. Training is done only for 5 epochs.
 
 Still, we reproduce the case that "uniform" initalization is best for Tversky Neural Networks.
-Features, projections and alpha/beta/theta are all initialized together the same way.
+Features, projections and alpha/beta/theta are all initialized together the same way. Rest of
+the weights are initialized with He-Kaiming initialization, as it is for the base model.
