@@ -15,17 +15,21 @@ implementation of the paper (number of layers, hyperparameters, etc.). Short tes
 MNIST and CIFAR10 have been conducted here to try to reproduce the paper. Results are
 averaged over 5 random runs, 32 batch size. 
 
-| Model (Initialization) | Dataset  | Accuracy        |
-|------------------------|----------|-----------------|
-| Base Model             | MNIST    | 0.9875 ± 0.0012 |
-| Tversky (Normal)       | MNIST    | 0.9822 ± 0.0029 |
-| Tversky (Uniform)      | MNIST    | 0.9856 ± 0.0021 |
-| Tversky (Orthogonal)   | MNIST    | 0.9865 ± 0.0014 |
-| Base Model             | CIFAR10  | 0.6723 ± 0.0060 |
-| Tversky (Normal)       | CIFAR10  | 0.6307 ± 0.0130 |
-| Tversky (Uniform)      | CIFAR10  | 0.6452 ± 0.0164 |
-| Tversky (Orthogonal)   | CIFAR10  | 0.4393 ± 0.2771 |
+| Model (Initialization)   | Dataset  | Accuracy        |
+|--------------------------|----------|-----------------|
+| Base Model (He-Kaiming)  | MNIST    | 0.9875 ± 0.0012 |
+| Tversky (Normal)         | MNIST    | 0.9822 ± 0.0029 |
+| Tversky (Uniform)        | MNIST    | 0.9856 ± 0.0021 |
+| Tversky (Orthogonal)     | MNIST    | 0.9865 ± 0.0014 |
+| Base Model  (He-Kaiming) | CIFAR10  | 0.6723 ± 0.0060 |
+| Tversky (Normal)         | CIFAR10  | 0.6307 ± 0.0130 |
+| Tversky (Uniform)        | CIFAR10  | 0.6452 ± 0.0164 |
+| Tversky (Orthogonal)     | CIFAR10  | 0.4393 ± 0.2771 |
 
 As it is also reported in the paper (Table 3), Tversky layers as a replacement for
-a "classification head" did not improve results. Test setups are very different
-from the paper.
+a "classification head" did not improve results. However, test setups are very different
+from the paper. The model architecture and hyperparameter configurations are different.
+Only "product" aggregation is tested here. Training is done only for 5 epochs.
+
+Still, we reproduce the case that "uniform" initalization is best for Tversky Neural Networks.
+Features, projections and alpha/beta/theta are all initialized together the same way.
